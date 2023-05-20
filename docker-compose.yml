@@ -1,0 +1,25 @@
+version: '3.8'
+name: streamsv-container
+
+services:
+    database:
+        container_name: database
+        image: postgres
+        restart: always
+        environment:
+            - POSTGRES_USER=root
+            - POSTGRES_PASSWORD=example
+            - POSTGRES_DB=streamsv
+        ports:
+            - 5432:5432
+    adminer:
+        container_name: adminer
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+    rtmp:
+        container_name: rtmp_server
+        build: ./apps/rtmp
+        ports:
+            - 1935:1935

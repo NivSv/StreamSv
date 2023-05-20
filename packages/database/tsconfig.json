@@ -1,0 +1,10 @@
+{
+    "include": ["index.ts"],
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist",
+        "target": "ES2018",
+        "lib": ["ES2015"],
+        "experimentalDecorators": true
+    }
+}
