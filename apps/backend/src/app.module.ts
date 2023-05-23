@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common'
 import { ThrottlerModule } from '@nestjs/throttler'
 import { HealthController } from 'health-check'
+import { UserModule } from './user/user.module'
 
 @Module({
     imports: [
@@ -8,6 +9,7 @@ import { HealthController } from 'health-check'
             ttl: 60,
             limit: 10,
         }),
+        UserModule,
     ],
     controllers: [HealthController],
     providers: [],
