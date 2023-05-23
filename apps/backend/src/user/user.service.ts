@@ -28,8 +28,8 @@ export class UserService {
         return `This action updates a #${id} user`
     }
 
-    async delete(user: User) {
-        return this.prisma.user.delete({
+    async delete(user: User): Promise<void> {
+        await this.prisma.user.delete({
             where: {
                 id: user.id,
             },
