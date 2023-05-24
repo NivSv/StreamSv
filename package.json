@@ -2,8 +2,10 @@
     "private": true,
     "scripts": {
         "build": "turbo build",
-        "prisma": "turbo run prisma --parallel --continue --no-cache --force",
-        "dev": "dotenv -- turbo dev",
+        "prisma": "docker-compose up -d --remove-orphans && turbo run prisma --parallel --continue --no-cache --force",
+        "dev": "docker-compose up -d --remove-orphans && dotenv -- turbo dev --parallel --continue --no-cache",
+        "docker:build": "docker-compose build",
+        "docker:stop": "docker-compose down --remove-orphans",
         "lint": "turbo lint",
         "clean": "turbo clean",
         "format": "prettier --write \"**/*.{ts,tsx,md}\""

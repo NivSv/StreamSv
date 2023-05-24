@@ -12,6 +12,8 @@
             "cache": false,
             "persistent": true
         },
+        "docker:build": {},
+        "docker:stop": {},
         "clean": {
             "cache": false
         },
